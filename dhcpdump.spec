@@ -23,11 +23,8 @@ A utility to analyze sniffed DHCP packets.
 %make_build
 
 %install
-mkdir -p $RPM_BUILD_ROOT%{_bindir}
-mkdir -p $RPM_BUILD_ROOT%{_mandir}/man8
-
-install -m 755 %{name} $RPM_BUILD_ROOT%{_bindir}/%{name}
-install -m 644 %{name}.8 $RPM_BUILD_ROOT%{_mandir}/man8/%{name}.8
+install -D -m 755 %{name} $RPM_BUILD_ROOT%{_bindir}/%{name}
+install -D -m 644 %{name}.8 $RPM_BUILD_ROOT%{_mandir}/man8/%{name}.8
 
 %files
 %license LICENSE
