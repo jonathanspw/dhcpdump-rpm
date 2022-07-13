@@ -23,12 +23,12 @@ A utility to analyze sniffed DHCP packets.
 %make_build
 
 %install
-install -D -m 755 %{name} $RPM_BUILD_ROOT%{_bindir}/%{name}
-install -D -m 644 %{name}.8 $RPM_BUILD_ROOT%{_mandir}/man8/%{name}.8
+install -D -m 755 -t %{buildroot}%{_bindir} %{name}
+install -D -m 644 -t %{buildroot}%{_mandir}/man8/ %{name}.8
 
 %files
 %license LICENSE
-%doc CHANGES CONTACT FILES
+%doc CHANGES CONTACT
 %{_bindir}/%{name}
 %{_mandir}/man8/%{name}.8*
 
