@@ -20,11 +20,11 @@ A utility to analyze sniffed DHCP packets.
 
 
 %build
-%make_build
+%make_build CFLAGS="%{build_cflags}" LDFLAGS="%{build_ldflags}"
 
 %install
-install -D -m 755 -t %{buildroot}%{_bindir} %{name}
-install -D -m 644 -t %{buildroot}%{_mandir}/man8/ %{name}.8
+install -D -p -m 755 -t %{buildroot}%{_bindir} %{name}
+install -D -p -m 644 -t %{buildroot}%{_mandir}/man8/ %{name}.8
 
 %files
 %license LICENSE
